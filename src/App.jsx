@@ -1,35 +1,83 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+    <div className="App">
+      {/* Navbar */}
+      <nav className="navbar">
+        <a href="#home">
+          <img src="/logo.png" alt="ASK Rendzeri Logo" className="logo" />
         </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button className="hamburger" onClick={toggleMenu}>
+          <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} size="2x" />
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+        <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
+          <li>
+            <a href="#about" onClick={() => setIsMenuOpen(false)}>
+              O nama
+            </a>
+          </li>
+          <li>
+            <a href="#activities" onClick={() => setIsMenuOpen(false)}>
+              Aktivnosti
+            </a>
+          </li>
+          <li>
+            <a href="#images" onClick={() => setIsMenuOpen(false)}>
+              Slike
+            </a>
+          </li>
+          <li>
+            <a href="#contact" onClick={() => setIsMenuOpen(false)}>
+              Kontakt
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      {/* Main Area */}
+      <main className="main">
+        <img src="/logo1.png" alt="Club Logo" className="club-logo" />
+        <section id="about-text" className="about">
+          <p>
+            Airsoft club "Rendžeri" (eng. Rangers) is an airsoft team based in
+            Sarajevo.
+          </p>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="footer">
+        <p>ASK Rendžeri, est 2016</p>
+        <div className="social-icons">
+          <a
+            href="https://www.facebook.com/ASK.Rendzeri"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faFacebook} size="2x" />
+          </a>
+          <a
+            href="https://www.instagram.com/askrangers/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faInstagram} size="2x" />
+          </a>
+        </div>
+      </footer>
+    </div>
+  );
 }
 
-export default App
+export default App;
