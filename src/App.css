@@ -1,9 +1,9 @@
 /* General Styles */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: #000; /* Black background */
   color: #ffd700; /* Yellow text */
   font-size: 18px; /* Base font size */
@@ -15,14 +15,13 @@ body {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding: 15px 30px;
   background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7); /* Subtle shadow for depth */
-
   position: fixed;
-  width: 100%;
   top: 0;
+  width: 100%;
   z-index: 1000;
   transition: background-color 0.3s ease;
 }
@@ -91,12 +90,17 @@ body {
   width: 100%; /* Full width underline */
 }
 
-/* Main Area */
+/* Main Section */
 .main {
   text-align: center;
   padding: 130px 20px; /* Adjusted for fixed navbar */
-  background: radial-gradient(circle, rgba(0, 0, 0, 0.8), #2e2d2d); /* Dark radial gradient */
-
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.8),
+    #2e2d2d
+  ); /* Dark radial gradient */
+  padding-top: 150px; /* Added to avoid image being too close to navbar */
+  margin-bottom: 80px; /* Ensure enough space for the footer */
 }
 
 .club-logo {
@@ -104,7 +108,6 @@ body {
   margin: 30px auto;
   transition: transform 0.5s ease, filter 0.5s ease;
   filter: drop-shadow(0px 4px 10px rgba(255, 215, 0, 0.8)); /* Golden glow effect */
-
 }
 
 .club-logo:hover {
@@ -141,6 +144,7 @@ body {
   text-align: center;
   padding: 30px;
   border-top: 2px solid #ffd700; /* Yellow border for style */
+  position: relative; /* Ensure it's in the document flow */
 }
 
 .footer p {
@@ -213,4 +217,54 @@ body {
   .nav-links a {
     font-size: 1.5rem; /* Bigger links for mobile */
   }
+
+  .navbar {
+    padding: 0px;
+    column-gap: 150px;
+  }
+}
+
+/* Loading Screen */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+
+.App.loading .loading-screen {
+  opacity: 1;
+}
+
+.App:not(.loading) .loading-screen {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 500ms ease-in-out, visibility 0s 500ms;
+}
+
+/* Main Content Fade Transition */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
 }
