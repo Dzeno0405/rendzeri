@@ -1,12 +1,20 @@
-/* General Styles */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+html {
+  text-rendering: optimizeSpeed;
+}
 
 body {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 400; /* Match the font-weight of Roboto */
+}
+
+
+:root {
   margin: 0;
-  font-family: "Poppins", sans-serif;
+
   background-color: #000; /* Black background */
   color: #ffd700; /* Yellow text */
-  font-size: 18px; /* Base font size */
   line-height: 1.6;
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
@@ -16,7 +24,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 15px 30px;
   background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7); /* Subtle shadow for depth */
   position: fixed;
@@ -52,8 +59,8 @@ body {
   list-style: none;
   display: flex;
   gap: 30px; /* Increased spacing */
-  margin: 0;
-  padding: 0;
+  animation: fadeIn 1s ease;
+  padding-left: 0px;
 }
 
 .nav-links li {
@@ -64,7 +71,7 @@ body {
   text-decoration: none;
   color: #ffd700;
   font-weight: bold;
-  font-size: 1.2rem; /* Larger font size */
+  font-size: 1.3rem; /* Larger font size */
   position: relative;
   overflow: hidden;
   transition: color 0.3s ease;
@@ -92,6 +99,7 @@ body {
 
 /* Main Section */
 .main {
+  flex: 1;
   text-align: center;
   padding: 130px 20px; /* Adjusted for fixed navbar */
   background: radial-gradient(
@@ -100,19 +108,37 @@ body {
     #2e2d2d
   ); /* Dark radial gradient */
   padding-top: 150px; /* Added to avoid image being too close to navbar */
-  margin-bottom: 80px; /* Ensure enough space for the footer */
+  /* margin-bottom: 80px; */ /* Ensure enough space for the footer */
+}
+
+.club-logo-container {
+  max-width: 500px; /* Match the max-width of the image */
+  aspect-ratio: 1 / 1; /* Adjust aspect ratio to fit your logo */
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .club-logo {
-  max-width: 400px; /* Larger image */
-  margin: 30px auto;
+  max-width: 400px;
+  height: auto; /* Maintains aspect ratio */
   transition: transform 0.5s ease, filter 0.5s ease;
-  filter: drop-shadow(0px 4px 10px rgba(255, 215, 0, 0.8)); /* Golden glow effect */
+  filter: drop-shadow(
+    0px 4px 10px rgba(255, 215, 0, 0.8)
+  ); /* Golden glow effect */
 }
 
 .club-logo:hover {
   transform: rotate(5deg) scale(1.1); /* Slight rotation and zoom */
   filter: brightness(1.2);
+}
+
+.club-description {
+  font-size: 1.2rem; /* Larger font size */
+  font-weight: 300 !important;
+  animation: fadeIn 1s ease;
 }
 
 .about {
@@ -139,12 +165,12 @@ body {
 
 /* Footer */
 .footer {
-  background: linear-gradient(145deg, #1a1a1a, #000000); /* Reverse gradient */
+  background: linear-gradient(145deg, #1a1a1a, #000000);
   color: #ffd700;
   text-align: center;
   padding: 30px;
-  border-top: 2px solid #ffd700; /* Yellow border for style */
-  position: relative; /* Ensure it's in the document flow */
+  border-top: 2px solid #ffd700;
+  margin-top: auto;
 }
 
 .footer p {
@@ -169,14 +195,18 @@ body {
 }
 
 /* Animations */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease;
+  animation-delay: 0.5s; /* Delays the animation slightly */
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -204,9 +234,6 @@ body {
     background-color: #333;
     position: absolute;
     top: 100%;
-    right: 0;
-    left: 0;
-    padding: 20px;
     border-top: 1px solid #ffd700;
   }
 

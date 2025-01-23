@@ -10,11 +10,13 @@ import "./App.css";
 // Page components
 const Home = () => (
   <div>
-    <img src="/logo1.png" alt="Club Logo" className="club-logo" />
-    <p>Airsoft club "Rendžeri" (eng. Rangers) is an airsoft team based in Sarajevo.
-    </p>
+    <div className="club-logo-container">
+      <img src="/logo1.png" alt="Club Logo" className="club-logo" />
+    </div>
+    <p className="club-description">Airsoft club "Rendžeri" (eng. Rangers) is an airsoft team based in Sarajevo.</p>
   </div>
 );
+
 const Onama = () => <Info />;
 const Aktivnosti = () => <div>Aktivnosti Content</div>;
 const Slike = () => <div>Slike Content</div>;
@@ -32,13 +34,13 @@ function App() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsLoading(false); // Set loading to false after the page is loaded
-    }, 200); // Adjust the delay time as needed
+    }, 1500); // Adjust the delay time as needed
 
     return () => clearTimeout(timeout);
   }, []);
 
   // Only render the content after loading is complete
-  if (isLoading) {
+  /*  if (isLoading) {
     return (
       <div className="App loading">
         <div className="loading-screen">
@@ -46,16 +48,16 @@ function App() {
         </div>
       </div>
     );
-  }
+  } */
 
   return (
     <Router>
       <div className="App">
         {/* Navbar */}
         <nav className="navbar">
-          <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+           <Link to="/" onClick={() => window.scrollTo(0, 0)}>
             <img src="/logo.png" alt="ASK Rendzeri Logo" className="logo" />
-          </Link>
+          </Link>  
           <button className="hamburger" onClick={toggleMenu}>
             <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} size="2x" />
           </button>
@@ -78,7 +80,7 @@ function App() {
         {/* Main Area with Smooth Transition */}
         <main className="main">
           <TransitionGroup>
-            <CSSTransition timeout={1500} classNames="fade" key={window.location.pathname}>
+            <CSSTransition timeout={500} classNames="fade" key={window.location.pathname}>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/onama" element={<Onama />} />
