@@ -1,0 +1,112 @@
+/* Global Styles for the Activities Component */
+.activities-container {
+    background-color: #111; /* Dark background to match the black theme */
+    color: #f1f1f1; /* Light text color for contrast */
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .activities-header {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #f7b500; /* Bright yellow color for the header */
+    margin-bottom: 30px;
+    text-transform: uppercase;
+  }
+  
+  .year-box {
+    background-color: #222; /* Slightly lighter than the main background */
+    border: 2px solid #f7b500; /* Yellow border for emphasis */
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .year-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .year-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #f7b500; /* Yellow for the year */
+    margin-bottom: 10px;
+  }
+  
+  .year-content {
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-size: 16px; /* Comfortable text size */
+    line-height: 1.8; /* Readable line spacing */
+    color: #ffffff; /* White text for dark themes */
+    background-color: #000000; /* Black background */
+    padding: 20px; /* Inner padding for content */
+    border-left: 4px solid #ffffff; /* White accent border */
+    border-radius: 6px; /* Slightly rounded corners */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Subtle white shadow */
+    margin-bottom: 20px; /* Space between sections */
+    transition: all 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .year-content:hover {
+    background-color: #1a1a1a; /* Slightly lighter black on hover */
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.3); /* Stronger hover shadow */
+  }
+  
+  .year-content p {
+    margin-bottom: 12px; /* Space between paragraphs */
+    font-weight: 400; /* Normal weight for text */
+  }
+  
+  .year-content ul {
+    list-style: circle; /* Circular bullets */
+    padding-left: 20px; /* Indentation for bullets */
+    margin: 0; /* Remove default margin */
+  }
+  
+  .year-content ul li {
+    margin-bottom: 10px; /* Space between list items */
+    color: #f0f0f0; /* Slightly softer white for bullets */
+  }
+  
+  .year-content ul li:last-child {
+    margin-bottom: 0; /* Remove space after the last item */
+  }
+  
+  
+  .activities-footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.1rem;
+    color: #f1f1f1;
+    font-weight: 500;
+  }
+  
+  .activities-footer p {
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .activities-container {
+      padding: 15px;
+    }
+  
+    .activities-header {
+      font-size: 2rem;
+    }
+  
+    .year-title {
+      font-size: 1.5rem;
+    }
+  
+    .year-content {
+      font-size: 1rem;
+    }
+  }
+  

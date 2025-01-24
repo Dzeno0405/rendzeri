@@ -1,56 +1,67 @@
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px); /* Optional: subtle movement */
+}
+
+.fade-in-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+}
+
 /* Info Container */
 .info-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 20px;
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.8), #1a1a1a); /* Dark gradient */
-    color: #ffd700;
-    text-align: center;
-  }
-  
-  /* Info Card */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.8), #1a1a1a); /* Dark gradient */
+  color: #ffd700;
+  text-align: center;
+}
+
+/* Info Card */
+.info-card {
+  background: rgba(26, 26, 26, 0.95); /* Semi-transparent dark background */
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Shadow for depth */
+  max-width: 800px;
+  line-height: 1.8;
+  border: 1px solid #ffd700; /* Yellow border */
+}
+
+/* Info Title */
+.info-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffd700;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 5px rgba(255, 215, 0, 0.7); /* Subtle golden glow */
+}
+
+/* Info Text */
+.info-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .info-card {
-    background: rgba(26, 26, 26, 0.95); /* Semi-transparent dark background */
-    padding: 40px 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Shadow for depth */
-    max-width: 800px;
-    line-height: 1.8;
-    border: 1px solid #ffd700; /* Yellow border */
+    padding: 30px 20px;
   }
-  
-  /* Info Title */
+
   .info-title {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #ffd700;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 5px rgba(255, 215, 0, 0.7); /* Subtle golden glow */
+    font-size: 2rem;
   }
-  
-  /* Info Text */
+
   .info-text {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.2rem;
-    color: #fff;
-    margin-bottom: 20px;
-    text-align: justify;
+    font-size: 1rem;
   }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .info-card {
-      padding: 30px 20px;
-    }
-  
-    .info-title {
-      font-size: 2rem;
-    }
-  
-    .info-text {
-      font-size: 1rem;
-    }
-  }
-  
+}
