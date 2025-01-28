@@ -280,21 +280,25 @@ body {
   transition: opacity 500ms ease-in-out, visibility 0s 500ms;
 }
 
-/* Main Content Fade Transition */
+/* Transition classes for CSSTransition */
 .fade-enter {
   opacity: 0;
+  transform: translateY(20px); /* Slightly slides in from below */
 }
 
 .fade-enter-active {
   opacity: 1;
-  transition: opacity 500ms ease-in-out;
+  transform: translateY(0);
+  transition: opacity 500ms ease-in, transform 500ms ease-in;
 }
 
-/* .fade-exit {
+.fade-exit {
   opacity: 1;
+  transform: translateY(0);
 }
 
 .fade-exit-active {
   opacity: 0;
-  transition: opacity 500ms ease-in-out;
-} */
+  transform: translateY(-20px); /* Slightly slides out upwards */
+  transition: opacity 500ms ease-out, transform 500ms ease-out;
+}

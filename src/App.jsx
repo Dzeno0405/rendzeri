@@ -6,8 +6,10 @@ import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Info from "./components/Info";
 import Images from "./components/Images";
-import Activities from "./components/Activities";  // Import Activities component
+import Activities from "./components/Activities"; // Import Activities component
+import Contact from "./components/Contact"; // Import the Contact component
 import "./App.css";
+
 
 // Page components
 const Home = () => (
@@ -20,9 +22,9 @@ const Home = () => (
 );
 
 const Onama = () => <Info />;
-const Aktivnosti = () => <Activities />;  // Replace placeholder with Activities component
+const Aktivnosti = () => <Activities />;
 const Slike = () => <Images />;
-const Kontakt = () => <div>Kontakt Content</div>;
+const Kontakt = () => <Contact />; // Use the Contact component here
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,7 +52,7 @@ function App() {
             <Link to="/aktivnosti">Aktivnosti</Link>
           </li>
           <li>
-            <Link to="/slike">Slike</Link> 
+            <Link to="/slike">Slike</Link>
           </li>
           <li>
             <Link to="/kontakt">Kontakt</Link>
@@ -60,21 +62,22 @@ function App() {
 
       {/* Main Area with Smooth Transitions */}
       <main className="main">
-        <TransitionGroup>
-          <CSSTransition
-            timeout={500}
-            classNames="fade"
-            key={location.pathname} // Use location.pathname for transition key
-          >
-            <Routes location={location}>
-              <Route path="/" element={<Home />} />
-              <Route path="/onama" element={<Onama />} />
-              <Route path="/aktivnosti" element={<Aktivnosti />} /> {/* Updated route for Activities */}
-              <Route path="/slike" element={<Slike />} />
-              <Route path="/kontakt" element={<Kontakt />} />
-            </Routes>
-          </CSSTransition>
-        </TransitionGroup>
+      <TransitionGroup>
+  <CSSTransition
+    key={location.pathname} // Use location.pathname as the unique key
+    timeout={500} // Duration for the animation
+    classNames="fade" // Use the fade class
+    unmountOnExit // Ensures the previous component is removed from the DOM
+  >
+    <Routes location={location}>
+      <Route path="/" element={<Home />} />
+      <Route path="/onama" element={<Onama />} />
+      <Route path="/aktivnosti" element={<Aktivnosti />} />
+      <Route path="/slike" element={<Slike />} />
+      <Route path="/kontakt" element={<Kontakt />} />
+    </Routes>
+  </CSSTransition>
+</TransitionGroup>
       </main>
 
       {/* Footer */}
@@ -100,6 +103,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;
