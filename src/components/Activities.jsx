@@ -1,15 +1,15 @@
 import "../style/Activities.css"; // Updated CSS
-import React from "react";
+import React, { useState } from "react";
 
 const Activities = () => {
   const activitiesData = [
     {
-      year: "2016 - 2022",
+      year: "2016 - 2020",
       content:
         "Airsoft klub Rendžeri osnovan je 2016. godine, a 2019. godine pridružio se Savezu airsoft klubova Federacije Bosne i Hercegovine, pri čemu je bio jedan od njegovih osnivača. Klub je bio posvećen očuvanju i unapređenju taktika modernog ratovanja, s posebnim naglaskom na metodologiju američkih Rangersa. Treninzi su obuhvatali širok spektar borbenih scenarija, uključujući šumsko ratovanje i CQB (Close Quarters Battle) taktike. U sklopu svog razvoja, klub je započeo izgradnju vlastitog poligona na Ilidži, te je nastavio njegovati svoju tradiciju i posvećenost sportu sve do kraćeg prekida uzrokovanog pandemijom COVID-19.",
     },
     {
-      year: "COVID - 2020 - 2022",
+      year: "2020 - 2022",
       content: "Tokom pandemije COVID-19, klub je i dalje organizovao nekoliko aktivnosti, ali u znatno manjem obimu u odnosu na prethodne godine. Ograničenja i mjere predostrožnosti uticale su na redovne treninge i okupljanja, što je usporilo razvoj i dinamiku kluba u tom periodu.",
     },
     {
@@ -24,16 +24,35 @@ const Activities = () => {
     {
       year: "2024",
       content: "Godine 2024. klub je nastavio s intenzivnim sudjelovanjem na airsoft susretima, prisustvujući na 90% događaja širom Bosne i Hercegovine. Postao je izuzetno aktivan na domaćim terenima, postupno se etablirajući kao jedan od prepoznatljivih i cijenjenih klubova. Njegova izdržljivost u terenskim uvjetima, predanost izvršavanju zadataka na susretima te prepoznatljiva Multicam uniforma dodatno su doprinijeli njegovom ugledu u airsoft zajednici. Tokom godine, klub je primio preko 20 novih članova, čime je značajno proširio svoje redove i dodatno osnažio tim. Krajem godine, usvojen je Pravilnik o radu i disciplinskoj odgovornosti, a formirana je i disciplinska komisija, čime su postavljeni jasni standardi organizacije i djelovanja kluba.",
-    },
-  ];
+    },  ];
+
+  const [expanded, setExpanded] = useState({});
+
+  const handleToggle = (index) => {
+    setExpanded((prevExpanded) => ({
+      ...prevExpanded,
+      [index]: !prevExpanded[index],
+    }));
+  };
 
   return (
     <div className="activities-container">
       <h2 className="activities-header">Aktivnosti kroz godine</h2>
       {activitiesData.map((activity, index) => (
         <div className="year-box" key={index}>
-          <div className="year-title">{activity.year}</div>
-          <div className="year-content">{activity.content}</div>
+          <div
+            className="year-title"
+            onClick={(e) => {
+              if (window.innerWidth < 768) {
+                handleToggle(index);
+              }
+            }}
+          >
+            {activity.year}
+          </div>
+          {(window.innerWidth >= 768 || expanded[index]) && (
+            <div className="year-content">{activity.content}</div>
+          )}
         </div>
       ))}
       <div className="activities-footer">
@@ -42,6 +61,5 @@ const Activities = () => {
     </div>
   );
 };
-
 
 export default Activities;
