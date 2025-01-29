@@ -33,6 +33,7 @@
     color: #ffd700;
     border-radius: 8px;
     font-size: 1rem;
+    margin-left : -15px;
   }
   
   .contact-form button {
