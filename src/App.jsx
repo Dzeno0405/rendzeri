@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes, Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
@@ -9,7 +9,6 @@ import Images from "./components/Images";
 import Activities from "./components/Activities"; 
 import Contact from "./components/Contact"; 
 import "./App.css";
-
 
 // Page components
 const Home = () => (
@@ -24,7 +23,7 @@ const Home = () => (
 const Onama = () => <Info />;
 const Aktivnosti = () => <Activities />;
 const Slike = () => <Images />;
-const Kontakt = () => <Contact />; 
+const Kontakt = () => <Contact />;
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,6 +32,21 @@ function App() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  // Function to update the document title
+  useEffect(() => {
+    if (location.pathname === "/onama") {
+      document.title = "ASK Rendzeri - O nama";
+    } else if (location.pathname === "/aktivnosti") {
+      document.title = "ASK Rendzeri - Aktivnosti";
+    } else if (location.pathname === "/slike") {
+      document.title = "ASK Rendzeri - Slike";
+    } else if (location.pathname === "/kontakt") {
+      document.title = "ASK Rendzeri - Kontakt";
+    } else {
+      document.title = "ASK Rendzeri"; // Default title for home page
+    }
+  }, [location]);
 
   return (
     <div className="App">
@@ -45,39 +59,39 @@ function App() {
           <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} size="2x" />
         </button>
         <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
-  <li>
-    <Link to="/onama" onClick={() => { toggleMenu(); window.scrollTo(0, 0); }}>O nama</Link>
-  </li>
-  <li>
-    <Link to="/aktivnosti" onClick={() => { toggleMenu(); window.scrollTo(0, 0); }}>Aktivnosti</Link>
-  </li>
-  <li>
-    <Link to="/slike" onClick={() => { toggleMenu(); window.scrollTo(0, 0); }}>Slike</Link>
-  </li>
-  <li>
-    <Link to="/kontakt" onClick={() => { toggleMenu(); window.scrollTo(0, 0); }}>Kontakt</Link>
-  </li>
-</ul>
+          <li>
+            <Link to="/onama" onClick={() => { toggleMenu(); window.scrollTo(0, 0); }}>O nama</Link>
+          </li>
+          <li>
+            <Link to="/aktivnosti" onClick={() => { toggleMenu(); window.scrollTo(0, 0); }}>Aktivnosti</Link>
+          </li>
+          <li>
+            <Link to="/slike" onClick={() => { toggleMenu(); window.scrollTo(0, 0); }}>Slike</Link>
+          </li>
+          <li>
+            <Link to="/kontakt" onClick={() => { toggleMenu(); window.scrollTo(0, 0); }}>Kontakt</Link>
+          </li>
+        </ul>
       </nav>
 
       {/* Main Area with Smooth Transitions */}
       <main className="main">
-      <TransitionGroup>
-  <CSSTransition
-    key={location.pathname} 
-    timeout={500} 
-    classNames="fade" 
-    unmountOnExit 
-  >
-    <Routes location={location}>
-      <Route path="/" element={<Home />} />
-      <Route path="/onama" element={<Onama />} />
-      <Route path="/aktivnosti" element={<Aktivnosti />} />
-      <Route path="/slike" element={<Slike />} />
-      <Route path="/kontakt" element={<Kontakt />} />
-    </Routes>
-  </CSSTransition>
-</TransitionGroup>
+        <TransitionGroup>
+          <CSSTransition
+            key={location.pathname} 
+            timeout={500} 
+            classNames="fade" 
+            unmountOnExit 
+          >
+            <Routes location={location}>
+              <Route path="/" element={<Home />} />
+              <Route path="/onama" element={<Onama />} />
+              <Route path="/aktivnosti" element={<Aktivnosti />} />
+              <Route path="/slike" element={<Slike />} />
+              <Route path="/kontakt" element={<Kontakt />} />
+            </Routes>
+          </CSSTransition>
+        </TransitionGroup>
       </main>
 
       {/* Footer */}
