@@ -6,15 +6,15 @@ const Activities = () => {
     {
       year: "2016 - 2022",
       content:
-        "Test",
+        "TBA",
     },
     {
       year: "COVID - 2020 - 2022",
-      content: "Manjak aktivnosti zbog pandemije.",
+      content: "TBA",
     },
     {
       year: "2022",
-      content: "Test",
+      content: "TBA",
     },
     {
         year: "2023",
@@ -23,7 +23,7 @@ const Activities = () => {
       
     {
       year: "2024",
-      content: "Detalji o aktivnostima koje će se dešavati u 2024.",
+      content: "TBA",
     },
   ];
 
@@ -37,7 +37,7 @@ const Activities = () => {
         </div>
       ))}
       <div className="activities-footer">
-        <p>Zapratite nas na drustvenim mrežama 🫡</p>
+        <p>Zapratite nas na društvenim mrežama 🫡</p>
       </div>
     </div>
   );

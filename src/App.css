@@ -231,15 +231,17 @@ body {
   .nav-links {
     display: none;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     background-color: #333;
     position: absolute;
     top: 100%;
-    border-top: 1px solid #ffd700;
   }
 
   .nav-links.open {
     display: flex;
+    padding: 20px;
+    margin-top: 0px;
+
   }
 
   .nav-links a {
@@ -249,6 +251,10 @@ body {
   .navbar {
     padding: 0px;
     column-gap: 150px;
+  }
+
+  .club-logo {
+    max-width: 300px;
   }
 }
 

@@ -17,7 +17,7 @@ const Home = () => (
     <div className="club-logo-container">
       <img src="/logo1.png" alt="Club Logo" className="club-logo" />
     </div>
-    <p className="club-description">Airsoft club "Rendžeri" (eng. Rangers) is an airsoft team based in Sarajevo.</p>
+    <p className="club-description">Airsoft klub "Rendžeri" (eng. Rangers) predstavlja vrhunski organizovan i renomiran tim sa sjedištem u Sarajevu, Bosna i Hercegovina. Klub se ističe profesionalnim pristupom, timskim duhom i posvećenošću promociji airsofta kao sporta i rekreativne aktivnosti.</p>
   </div>
 );
 
@@ -45,19 +45,19 @@ function App() {
           <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} size="2x" />
         </button>
         <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
-          <li>
-            <Link to="/onama">O nama</Link>
-          </li>
-          <li>
-            <Link to="/aktivnosti">Aktivnosti</Link>
-          </li>
-          <li>
-            <Link to="/slike">Slike</Link>
-          </li>
-          <li>
-            <Link to="/kontakt">Kontakt</Link>
-          </li>
-        </ul>
+  <li>
+    <Link to="/onama" onClick={() => { toggleMenu(); window.scrollTo(0, 0); }}>O nama</Link>
+  </li>
+  <li>
+    <Link to="/aktivnosti" onClick={() => { toggleMenu(); window.scrollTo(0, 0); }}>Aktivnosti</Link>
+  </li>
+  <li>
+    <Link to="/slike" onClick={() => { toggleMenu(); window.scrollTo(0, 0); }}>Slike</Link>
+  </li>
+  <li>
+    <Link to="/kontakt" onClick={() => { toggleMenu(); window.scrollTo(0, 0); }}>Kontakt</Link>
+  </li>
+</ul>
       </nav>
 
       {/* Main Area with Smooth Transitions */}

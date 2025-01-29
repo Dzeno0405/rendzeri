@@ -19,7 +19,7 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("Sending...");
+    setStatus("Slanje...");
 
     // Get environment variables using Vite's import.meta.env
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
@@ -49,7 +49,7 @@ const Contact = () => {
         setStatus("Poruka je poslana!");
         setFormData({ fullName: "", email: "", message: "" });
       } else {
-        setStatus("Molimo pokusajte opet.");
+        setStatus("Molimo pokušajte opet.");
       }
     } catch (error) {
       console.error("Error sending message:", error);
@@ -93,7 +93,7 @@ const Contact = () => {
             required
           ></textarea>
         </div>
-        <button type="submit">Posalji poruku</button>
+        <button type="submit">Pošalji poruku</button>
       </form>
       <p>{status}</p>
     </div>
