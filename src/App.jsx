@@ -6,8 +6,8 @@ import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Info from "./components/Info";
 import Images from "./components/Images";
-import Activities from "./components/Activities"; // Import Activities component
-import Contact from "./components/Contact"; // Import the Contact component
+import Activities from "./components/Activities"; 
+import Contact from "./components/Contact"; 
 import "./App.css";
 
 
@@ -24,11 +24,11 @@ const Home = () => (
 const Onama = () => <Info />;
 const Aktivnosti = () => <Activities />;
 const Slike = () => <Images />;
-const Kontakt = () => <Contact />; // Use the Contact component here
+const Kontakt = () => <Contact />; 
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation(); // Get the current location from React Router
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -64,10 +64,10 @@ function App() {
       <main className="main">
       <TransitionGroup>
   <CSSTransition
-    key={location.pathname} // Use location.pathname as the unique key
-    timeout={500} // Duration for the animation
-    classNames="fade" // Use the fade class
-    unmountOnExit // Ensures the previous component is removed from the DOM
+    key={location.pathname} 
+    timeout={500} 
+    classNames="fade" 
+    unmountOnExit 
   >
     <Routes location={location}>
       <Route path="/" element={<Home />} />

@@ -6,15 +6,15 @@ const Activities = () => {
     {
       year: "2016 - 2022",
       content:
-        "TBA",
+        "Airsoft klub Rendžeri osnovan je 2016. godine, a 2019. godine pridružio se Savezu airsoft klubova Federacije Bosne i Hercegovine, pri čemu je bio jedan od njegovih osnivača. Klub je bio posvećen očuvanju i unapređenju taktika modernog ratovanja, s posebnim naglaskom na metodologiju američkih Rangersa. Treninzi su obuhvatali širok spektar borbenih scenarija, uključujući šumsko ratovanje i CQB (Close Quarters Battle) taktike. U sklopu svog razvoja, klub je započeo izgradnju vlastitog poligona na Ilidži, te je nastavio njegovati svoju tradiciju i posvećenost sportu sve do kraćeg prekida uzrokovanog pandemijom COVID-19.",
     },
     {
       year: "COVID - 2020 - 2022",
-      content: "TBA",
+      content: "Tokom pandemije COVID-19, klub je i dalje organizovao nekoliko aktivnosti, ali u znatno manjem obimu u odnosu na prethodne godine. Ograničenja i mjere predostrožnosti uticale su na redovne treninge i okupljanja, što je usporilo razvoj i dinamiku kluba u tom periodu.",
     },
     {
       year: "2022",
-      content: "TBA",
+      content: "Godine 2022. klub je obnovio organizaciju Airsoft škole za početnike, što je rezultiralo prijemom više od 10 novih članova. Shodno tome, došlo je do promjene uprave kluba, koja je nastavila s daljim razvojem i unapređenjem aktivnosti. Nova uprava pokrenula je nove cikluse Airsoft škole, obučavala nove članove i osnažila tim. Klub je nastavio s redovnim treninzima i aktivnostima, dok su njegovi članovi postali izuzetno aktivni na MILSIM susretima širom Bosne i Hercegovine.",
     },
     {
         year: "2023",
@@ -23,7 +23,7 @@ const Activities = () => {
       
     {
       year: "2024",
-      content: "TBA",
+      content: "Godine 2024. klub je nastavio s intenzivnim sudjelovanjem na airsoft susretima, prisustvujući na 90% događaja širom Bosne i Hercegovine. Postao je izuzetno aktivan na domaćim terenima, postupno se etablirajući kao jedan od prepoznatljivih i cijenjenih klubova. Njegova izdržljivost u terenskim uvjetima, predanost izvršavanju zadataka na susretima te prepoznatljiva Multicam uniforma dodatno su doprinijeli njegovom ugledu u airsoft zajednici. Tokom godine, klub je primio preko 20 novih članova, čime je značajno proširio svoje redove i dodatno osnažio tim. Krajem godine, usvojen je Pravilnik o radu i disciplinskoj odgovornosti, a formirana je i disciplinska komisija, čime su postavljeni jasni standardi organizacije i djelovanja kluba.",
     },
   ];
 
