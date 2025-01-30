@@ -31,11 +31,12 @@ body {
   width: 100%;
   z-index: 1000;
   transition: background-color 0.3s ease;
+  padding-top: 1vh;
 }
 
-.navbar:hover {
-  background-color: #444; /* Slightly lighter on hover */
-}
+/* .navbar:hover {
+  background-color: #444; 
+} */
 
 .navbar .logo {
   height: 70px; /* Larger logo */
