@@ -102,14 +102,13 @@ body {
 .main {
   flex: 1;
   text-align: center;
-  padding: 355px 20px; /* Adjusted for fixed navbar */
+  padding: 130px 20px; 
   background: radial-gradient(
     circle,
     rgba(0, 0, 0, 0.8),
     #2e2d2d
   ); /* Dark radial gradient */
-  padding-top: 150px; /* Added to avoid image being too close to navbar */
-  /* margin-bottom: 80px; */ /* Ensure enough space for the footer */
+  padding-top: 150px; 
 }
 
 .club-logo-container {
